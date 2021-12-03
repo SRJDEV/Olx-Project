@@ -1,0 +1,751 @@
+{
+	"info": {
+		"_postman_id": "ff21ed5b-3bd7-4fb8-a359-cb6e4c6a7570",
+		"name": "OLX",
+		"description": "Java Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Q1.Auth User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\" :\"suraj\",\n\t\"password\":\"suraj\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9005/olx/login/user/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9005",
+					"path": [
+						"olx",
+						"login",
+						"user",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q2. Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\" :\"suraj\",\n\t\"password\":\"suraj\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9005/olx/login/user/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9005",
+					"path": [
+						"olx",
+						"login",
+						"user",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.3 Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXJhaiIsImV4cCI6MTYzNzk1NDI5NCwiaWF0IjoxNjM3OTE4Mjk0fQ.Op9JUPThMrmg376E876jFhSkcGkGsKcfleWt6zWOgOY",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\": \"anand\", \n\"role\": \"ROLE_USER\",\n\"password\":\"anand\",\n\"active\":1,\n\"email\":\"anand@zensar.com\",\n\"firstName\":\"Anand\",\n\"lastName\":\"Kulkarni\"\n}\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:9005/olx/login/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9005",
+					"path": [
+						"olx",
+						"login",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.4 Get UserDetails By Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODIyMTIzNiwiaWF0IjoxNjM4MTg1MjM2fQ.tKuJVhoQKKXIQgOV-_rgEoUHedDcNFPKq-vuMNYLMKE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9005/olx/login/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9005",
+					"path": [
+						"olx",
+						"login",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q5.Get Category",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODIyMTIzNiwiaWF0IjoxNjM4MTg1MjM2fQ.tKuJVhoQKKXIQgOV-_rgEoUHedDcNFPKq-vuMNYLMKE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9001/olx/masterdata/advertise/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"olx",
+						"masterdata",
+						"advertise",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q5.Get Category V2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODIyMTIzNiwiaWF0IjoxNjM4MTg1MjM2fQ.tKuJVhoQKKXIQgOV-_rgEoUHedDcNFPKq-vuMNYLMKE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9001/olx/masterdata/v2/advertise/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"olx",
+						"masterdata",
+						"v2",
+						"advertise",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.6 Get Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODIyMTIzNiwiaWF0IjoxNjM4MTg1MjM2fQ.tKuJVhoQKKXIQgOV-_rgEoUHedDcNFPKq-vuMNYLMKE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9001/olx/masterdata/advertise/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"olx",
+						"masterdata",
+						"advertise",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.7 Create New Advertise",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODIyMTIzNiwiaWF0IjoxNjM4MTg1MjM2fQ.tKuJVhoQKKXIQgOV-_rgEoUHedDcNFPKq-vuMNYLMKE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"Sony Laptop\", \n\"price\": 70000,\n\"description\": \"Sony\",\n\"username\":\"Suraj\",\n\"posted_by\":\"Suraj Chavan\",\n\"status\":1,\n\"categoryId\":43,\n\"active\":1\n}\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/advertise",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"advertise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.8 Update Advertise",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODU1MDExMywiaWF0IjoxNjM4NTE0MTEzfQ.I_KvAExeWypgV4yFEKftAudqPrSBL0AXb7-fhLhHvh4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"Sony Laptop\", \n\"price\": 99000,\n\"description\": \"Sony vaio laptop with 8gb ram\",\n\"categoryId\":43,\n\"active\":1,\n\"status\":1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/update/58",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"update",
+						"58"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.9 Get All Advertise By Username",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXJhaiIsImV4cCI6MTYzNzk1NDI5NCwiaWF0IjoxNjM3OTE4Mjk0fQ.Op9JUPThMrmg376E876jFhSkcGkGsKcfleWt6zWOgOY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/user/advertises/Sur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"user",
+						"advertises",
+						"Sur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.10 Get Advertise By Id  & Logged In User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXJhaiIsImV4cCI6MTYzNzg2NzYwNSwiaWF0IjoxNjM3ODMxNjA1fQ.sziC1BQiIhJs9GORWAfVuFK2g5M7Rmc9EAQOuJPnSQ0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/user/advertise/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"user",
+						"advertise",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.11 Delete Advertise",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmFuZCIsImV4cCI6MTYzODI5MzMyNCwiaWF0IjoxNjM4MjU3MzI0fQ.fiwFkOoIiYTY9wleEMJ7Ezgi1HYeD2UvGQecgiMZuZs"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/user/advertise/50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"user",
+						"advertise",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.12 Search Filter Criteria",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXJhaiIsImV4cCI6MTYzNzk1NDI5NCwiaWF0IjoxNjM3OTE4Mjk0fQ.Op9JUPThMrmg376E876jFhSkcGkGsKcfleWt6zWOgOY",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/advertise/search/dell",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"advertise",
+						"search",
+						"dell"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.13 Search Advertise by Serach Text",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXJhaiIsImV4cCI6MTYzNzk1NDI5NCwiaWF0IjoxNjM3OTE4Mjk0fQ.Op9JUPThMrmg376E876jFhSkcGkGsKcfleWt6zWOgOY",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/advertise/search/dell",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"advertise",
+						"search",
+						"dell"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Q.14 Get AdvertiseDeatils By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmFuZCIsImV4cCI6MTYzODI1NTA2NiwiaWF0IjoxNjM4MjE5MDY2fQ.t318YNexLLCOcNxCE3lmilKBOhuoiUEhvXsUo2EDMtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9002/olx/adv/user/advertise/47",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"olx",
+						"adv",
+						"user",
+						"advertise",
+						"47"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODIyMTIzNiwiaWF0IjoxNjM4MTg1MjM2fQ.tKuJVhoQKKXIQgOV-_rgEoUHedDcNFPKq-vuMNYLMKE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Category",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTdXJhaiIsImV4cCI6MTYzODIyMTIzNiwiaWF0IjoxNjM4MTg1MjM2fQ.tKuJVhoQKKXIQgOV-_rgEoUHedDcNFPKq-vuMNYLMKE",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9001/olx/masterdata/advertise/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"olx",
+						"masterdata",
+						"advertise",
+						"category"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
