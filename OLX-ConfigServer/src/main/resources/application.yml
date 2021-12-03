@@ -1,0 +1,15 @@
+server:
+  port: 8888
+  
+spring:
+  application:
+    name: configuration-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SRJDEV/olx-config.git
+         
+          username: SRJDEV
+          password: WRONGPASSWORD
+          clone-on-start: true

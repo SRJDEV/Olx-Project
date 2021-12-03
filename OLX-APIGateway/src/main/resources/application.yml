@@ -1,0 +1,37 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: API-GATEWAY
+  zipkin:
+      base-url: http://localhost:9411/zipkin/
+  cloud:
+    gateway:
+      routes:
+      - id: masterdata-service
+        uri: lb://masterdata-service
+        predicates:
+          - Path=/olx/masterdata/**
+      - id: advertise-service
+        uri: lb://advertise-service
+        predicates:
+          - Path=/olx/adv/**
+      - id: login-service
+        uri: lb://login-service
+        predicates:
+          - Path=/olx/login/**
+          
+
+
+eureka:
+    client:
+      register-with-eureka: true
+      fetch-registry: true
+    instance:
+     prefer-ip-address: true
+     hostname: localhost
+
+
+
+
+

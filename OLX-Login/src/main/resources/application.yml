@@ -1,0 +1,23 @@
+server:  port: 9005
+spring:
+   application:    name: login-service
+   zipkin:    base-url: http://localhost:9411        config:    import:    - configserver:http://localhost:8888       data:    mongodb:      host: localhost      port: 27017      database: advertisedb         management:  endpoints:    web:      exposure:        include: "*"   endpoint:    health:      show-details: always        
+#   datasource:
+#      url: jdbc:mysql://localhost:3306/securedb
+#      driverClassName: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: root
+#   jpa:
+#      hibernate.ddl-auto: update
+#      properties:
+#         hibernate:
+#            dialect: org.hibernate.dialect.MySQL8Dialect
+            
+eureka:
+    client:
+      register-with-eureka: true
+      fetch-registry: true    instance:     hostname: localhost  
+      
+
+
+
